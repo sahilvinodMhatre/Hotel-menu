@@ -1,2 +1,2 @@
-# hotel
+# hotel menu
 Demo for clients
