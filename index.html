@@ -29,6 +29,7 @@
     <script>
         let menupics = document.getElementById('menupics');
         let myvar = 1
+        var currentURL = window.location.href;
             // let finalimg = '<img src="/Hotel-menu/images/1.jpeg">'
             // menupics.append(` test: ${myvar}`);
 
@@ -42,7 +43,7 @@
 
         /*  for (let i = 1; i <= 8; i++) {
               document.getElementById("nojs").insertAdjacentHTML("beforeBegin",
-                  `<a href='/Hotel-menu/images/${i}.jpeg' data-lightbox="mygallery"> <img src='/Hotel-menu/images/${i}.jpeg'></a>`);
+                  `<a href='${currentURL}/images/${i}.jpeg' data-lightbox="mygallery"> <img src='${currentURL}/images/${i}.jpeg'></a>`);
           }*/
 
         for (let i = 1; i <= 50; i++) {
@@ -51,9 +52,9 @@
             let extensionindex;
             let noimg;
             for (let j = 0; j <= 3; j++) {
-                let imgurl = `/Hotel-menu/images/${i}.${extensions[j]}'`;
+                let imgurl = `${currentURL}/images/${i}.${extensions[j]}'`;
                 var http = new XMLHttpRequest();
-                http.open('HEAD', `/Hotel-menu/images/${i}.${extensions[j]}`, false);
+                http.open('HEAD', `${currentURL}/images/${i}.${extensions[j]}`, false);
                 http.send();
                 if (http.status == 200) {
                     extensionindex = j;
@@ -68,7 +69,7 @@
                 break;  
             }
             document.getElementById("nojs").insertAdjacentHTML("beforeBegin",
-                `<a href='/Hotel-menu/images/${i}.${extensions[extensionindex]}?a=${Math.floor((Math.random() * 10000) + 1)}' data-lightbox="mygallery" data-title="Use your two fingures to zoom in"><img src='/Hotel-menu/images/${i}.${extensions[extensionindex]}?a=${Math.floor((Math.random() * 10000) + 1)}'></a>`);
+                `<a href='${currentURL}/images/${i}.${extensions[extensionindex]}?a=${Math.floor((Math.random() * 10000) + 1)}' data-lightbox="mygallery" data-title="Use your two fingures to zoom in"><img src='${currentURL}/images/${i}.${extensions[extensionindex]}?a=${Math.floor((Math.random() * 10000) + 1)}'></a>`);
         }
     </script>
     <footer>
