@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  website:
+    image:  equin0x/hotel-menu-pl:latest
+    ports:
+      - "80:80"
